@@ -32,6 +32,9 @@ would notice. The same rule the kit asks of your own changelog.
 - **Decided:** `setup.sh --update` refreshes a base you already have,
   commits nothing and never touches the rulebook; a plain re-run on an
   existing base refuses.
+- **Decided:** a mark, `logo.svg`: three compiled notes standing on one
+  original, the slab in six colours for six principles and no letters.
+  The design note is inside the file.
 - **Decided:** the onboarding page lives at
   [pardel.dev/govern/onboard](https://www.pardel.dev/govern/onboard/),
   where it can run, and the command explanations at

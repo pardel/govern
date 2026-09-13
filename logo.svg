@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="GOVERN">
+  <title>GOVERN</title>
+  <!-- The compile model, reduced to a mark.
+
+       Three notes stand on one slab. The notes are outlined and light
+       because anything compiled can be thrown away and made again; the slab
+       is solid because the original never can be. From each note a dotted
+       thread runs down into the slab: every note cites the file it came
+       from, which is the whole method in one glance.
+
+       The slab carries six colours and no letters. There are six principles
+       and the name is their acrostic, so the stripe is the word for anyone
+       who knows that and a foundation in six parts for anyone who does not.
+       At favicon size the outlines soften and the stripe is what survives,
+       which is the right way round: the thing the notes stand on is the
+       thing that has to be legible.
+
+       The tile, its radius and its ground are the same as the other marks
+       on pardel.dev, so the projects page reads as one hand. -->
+  <defs>
+    <clipPath id="slab"><rect x="80" y="344" width="352" height="80" rx="16"/></clipPath>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0f172a"/>
+
+  <!-- the compiled notes: outlined, light, replaceable -->
+  <g fill="#0f172a" stroke="#e2e8f0" stroke-width="7">
+    <rect x="84"  y="118" width="96" height="122" rx="16"/>
+    <rect x="208" y="118" width="96" height="122" rx="16"/>
+    <rect x="332" y="118" width="96" height="122" rx="16"/>
+  </g>
+  <g fill="#e2e8f0">
+    <rect x="106" y="148" width="52" height="11" rx="5.5"/><rect x="106" y="174" width="36" height="11" rx="5.5"/>
+    <rect x="230" y="148" width="52" height="11" rx="5.5"/><rect x="230" y="174" width="36" height="11" rx="5.5"/>
+    <rect x="354" y="148" width="52" height="11" rx="5.5"/><rect x="354" y="174" width="36" height="11" rx="5.5"/>
+  </g>
+
+  <!-- the provenance threads, one per note, into the slab -->
+  <g stroke="#64748b" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 16" fill="none">
+    <path d="M132 246 V332"/><path d="M256 246 V332"/><path d="M380 246 V332"/>
+  </g>
+
+  <!-- the original: one slab, six principles -->
+  <g clip-path="url(#slab)">
+    <rect x="80"  y="344" width="60" height="80" fill="#3b82f6"/>
+    <rect x="138" y="344" width="60" height="80" fill="#f59e0b"/>
+    <rect x="197" y="344" width="60" height="80" fill="#22c55e"/>
+    <rect x="256" y="344" width="60" height="80" fill="#a855f7"/>
+    <rect x="314" y="344" width="60" height="80" fill="#ef4444"/>
+    <rect x="373" y="344" width="60" height="80" fill="#14b8a6"/>
+  </g>
+</svg>

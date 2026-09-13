@@ -1,3 +1,5 @@
+<img src="logo.svg" alt="" width="88" align="right">
+
 # GOVERN: A second brain that shows its work
 
 Six principles for trusting an AI-run knowledge base, and the script and prompts that put them in place.
