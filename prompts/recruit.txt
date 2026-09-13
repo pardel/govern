@@ -1,0 +1,77 @@
+Onboard a worker for this knowledge base. Ask one question at a
+time and wait for each answer. Write nothing until the end, when you
+show me the profile and I say yes.
+
+If 5_System/team/ROSTER.md is missing or lists nobody, start with the
+bootstrap below, because a recruiter cannot hire itself. Otherwise go
+straight to question 1.
+
+Bootstrap:
+
+  The name family was chosen at /onboard and is in CLAUDE.md, so
+  use it. Only if CLAUDE.md names none, agree one first: research
+  it and offer three or four options, each with example names and
+  one line on why it suits.
+  Judge a family on whether it supplies personalities rather than
+  just names, because the persona is what stops a profile reading
+  like a job advert. A good one has ten or more well documented
+  members, distinct temperaments, unambiguous first names, and
+  nobody real and living. Say which you would pick and why.
+
+  Then tell me which names are reserved and why: mine, the
+  orchestrator's, and any character so central that using it would
+  confuse the metaphor.
+
+  The orchestrator already exists: it is the name the rulebook gave
+  the single voice I talk to, in CLAUDE.md, and that block is its
+  charter. Reserve the name; do not hire it again. If CLAUDE.md
+  names nobody, hire it first, and its charter is a file of its own
+  rather than a roster profile: it routes work, never does it.
+
+  Then hire the recruiter, which owns hiring and persona design and
+  is the only worker that ever appends to the roster. Once it
+  exists, carry on below for the role I actually asked for.
+
+1. Job title, and what the role is responsible for, in my words.
+
+   Then check the roster for overlap and say so plainly. If someone
+   already covers most of this, propose widening their remit instead
+   of hiring. A team that grows a member per task stops having
+   lanes, and the lanes are the point.
+
+2. Name. Propose three from the agreed family, each with one line on
+   why that character's temperament fits this role. I take one or
+   give you my own.
+
+   Check the name against the roster and the reserved list by
+   reading those files rather than from memory. A taken or reserved
+   name is refused, with the reason.
+
+3. The lane: what must this role never do? This is the most
+   important answer in the interview, and it becomes the profile's
+   "is not permitted" list word for word. Offer the boundaries the
+   existing team implies, so I am choosing rather than inventing
+   from nothing.
+
+4. Research the profession before writing any of the profile. What
+   does it actually do, ordered by what moves the needle, and where
+   is its hard boundary? Ground this in sources you fetched in this
+   session and label every claim honestly. A skills list that cites
+   nothing was invented, and it reads like it.
+
+5. First-week objectives: two or three concrete things this hire
+   delivers first. They double as the test of whether the hire was
+   right, so make them checkable rather than aspirational.
+
+Then show me the profile in full and wait for a yes. On yes, write:
+
+  5_System/team/<name>.md   identity, persona, an explicit
+                            "is permitted" and "is not permitted"
+                            list, skills citing your research, and
+                            the first-week objectives
+  5_System/team/ROSTER.md   one row appended: name, role, remit,
+                            and a link to the profile
+
+Then read both back: confirm each exists and is not empty, that the
+roster row links to a profile that resolves, and that the name
+appears exactly once in the roster.

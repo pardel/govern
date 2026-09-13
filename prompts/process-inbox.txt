@@ -1,0 +1,18 @@
+Process everything in 0_Inbox/.
+
+For each item: read it, move the original unchanged into
+4_Archive/YYYY-MM/, classify it per CLAUDE.md, and write a compiled
+note at the destination. Its frontmatter carries a stable id
+(YYYYMMDD-slug, never changed once written), the archived source
+path, when it was compiled, a status, tags and a one-line summary.
+Apply the honesty labels.
+
+Then add one row per note to 5_System/INDEX.md: the id, the path and
+the summary on one line, so the whole base can be searched with grep
+before any note is opened.
+
+Before you tell me you're done: re-read every file you just wrote,
+confirm each one exists and isn't empty, check that every factual
+claim traces back to a line in the archived original, and check
+that every new id appears in the index exactly once. Tell me what
+you couldn't verify rather than quietly leaving it out.

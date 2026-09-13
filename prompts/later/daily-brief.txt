@@ -1,0 +1,34 @@
+# The grown version of prompts/daily-brief.txt, after three months of
+# use. It assumes a pulse script, a goals file, a commitments register
+# and a changelog, none of which setup.sh creates. Use the starter
+# version until you have those. If any of them is missing when this
+# runs, say so rather than working around it.
+
+Write today's brief.
+
+First run the pulse script and read all of it. Everything
+deterministic (what's due, what's stale, how many days since each
+area last saw activity) comes from there rather than from your
+judgement.
+
+Then read my goals file, the commitments register, and this
+month's changelog entries.
+
+Write the brief to 5_System/briefs/brief-YYYY-MM-DD.md with these
+sections:
+
+  Focus today      the top three, each naming the goal it serves
+  Commitments due  every row checking today or earlier
+  Area pulse       one line per area, taken from the script
+  Sources & gaps   every input consulted, with its status
+  Questions        the real ones, biggest divergence first
+
+Never write evidence of activity that isn't in a source. Cite a
+goal as inferred when that's what it is. When a source is
+unreachable, say so in Sources & gaps and plan around the gap
+openly.
+
+Escalate rather than carry on. If the weekly review is more than a
+week overdue, the lead question becomes whether to run it now. If
+several briefs are sitting unacknowledged, open with that fact
+instead of with today's plan.

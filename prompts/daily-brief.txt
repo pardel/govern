@@ -1,0 +1,15 @@
+Write today's brief to 5_System/briefs/brief-YYYY-MM-DD.md, using
+today's actual date in the filename.
+
+Sections, in this order:
+
+  Focus today      the three things that matter most today, each
+                   with one line on why it matters
+  Commitments due  anything with a check date of today or earlier
+  Sources & gaps   every input you consulted, and its status
+
+In Sources & gaps, mark each input as fetched, stale (with the date
+it was last good), or unreachable. If you couldn't reach something,
+say so plainly rather than planning around the gap and hoping.
+A brief without that section is broken, so write it even on the
+days when everything worked.

@@ -1,0 +1,142 @@
+Write CLAUDE.md at the root of this folder: the rulebook for a
+personal knowledge base built on the GOVERN principles.
+
+First check whether CLAUDE.md already exists. If it does, stop and
+tell me what is in it, including my current gates list, then ask
+whether I want it replaced. Overwriting a grown rulebook loses every
+correction that went into it, so do not do it without my explicit
+yes. If I say yes, work from what is there rather than from nothing:
+carry the gates list over unless I change it.
+
+Before writing anything, ask me five things, one question at a
+time.
+
+First, what to call you, and it starts with a family of names. Every
+worker this base ever gets is named from one family, so the names
+carry a temperament rather than a job title and nobody has to invent
+one later. Offer four families, one line each on the personalities it
+supplies: the Minions (Bob, Kevin, Stuart, Phil, Dave), the Greek gods
+(Hestia, Hermes, Athena, Apollo), Toy Story (Woody, Buzz, Jessie, Rex,
+Hamm) and Super Mario (Mario, Luigi, Peach, Toad, Yoshi). The free-
+text line carries a family of my own, or simply a name for you if I
+would rather skip the family. Then, from the family I chose, offer
+three names for yourself with one line each on why that character
+suits the single voice I talk to, or take the one I typed. That name
+is reserved for you from then on.
+
+Second, which actions must never happen without my explicit yes?
+Offer these eight as a list to pick from, and a free-text line for
+my own:
+
+  deleting files
+  sending emails
+  publishing anything outside this folder
+  pushing to GitHub
+  spending money
+  sending anything to a client or third party
+  changing scheduled jobs
+  overwriting a remembered fact
+
+If your picker takes at most four at a time, ask in two rounds in
+that order. Nothing is pre-selected, so say so, and say that most
+people should select the first four and only leave one out if they
+truly would not stop for it. What I select, plus anything I typed,
+becomes the gates list, verbatim. Keep it short: it is a budget,
+and every line spends attention I will want for the things that
+cannot be undone.
+
+Third, my areas: the things I am responsible for on an ongoing
+basis, which become the folders under 2_Areas/. Offer Personal and
+Work as a list to pick from, both there to be kept unless I drop
+them, and a free-text line for as many more as I want, a few words
+each: health, a side project, family, finances, a client. What I
+keep, plus what I typed, is the list; if I select nothing and type
+nothing, there are no areas yet and that is fine.
+
+Fourth, if there are areas, a line on each: what belongs there, and
+what good looks like. One area per question, in order, never a form
+to copy back. Each question names the area and takes my line as
+free text; it also offers "skip this one" and "skip the rest", and,
+where the name makes one obvious (Personal, Work), one or two
+drafted lines I can accept or edit rather than write from nothing.
+For a name only I could explain, offer no draft. The line is what
+lets you classify an item without asking, and what the weekly review
+later measures the area against; an area without one is marked so
+in the rulebook, and the first review asks for it.
+
+Fifth, whether I want the daily brief written before I wake, and if
+so at what hour, six unless I say otherwise. If I say yes, then once
+the rulebook is written run
+
+  bash 5_System/tools/schedule.sh install daily-brief <hour>
+
+and show me its output as it is. On macOS that writes the launchd
+entry with the real paths filled in and loads it; elsewhere it
+prints the cron line for me to paste, because a crontab is not a
+file it will edit. Do not schedule anything any other way. If I say
+not yet, end by telling me to run /daily-brief by hand once, and to
+come back to the README's "Running it unattended" when it says
+something worth waking up to.
+
+Then write the file. It should cover:
+
+- What each folder is for. Projects have an end state, Areas are
+  ongoing with no end state, Resources are reference material with
+  no deadline, Archive holds every original untouched.
+- Classification: for each new item decide Project, Area or
+  Resource. If it's ambiguous, choose Resources and don't ask me.
+- The areas: my list, one folder each under 2_Areas/, created when
+  the rulebook is written, folder names without spaces (Sport-Team
+  for "Sport Team") and the name as I gave it in the rulebook, with
+  my line on each beside it, or "no description yet". Only areas
+  live there: briefs and reviews are the system's output and go
+  under 5_System/. New areas are proposed in the brief and never
+  created on the way past; an item that fits no area goes to
+  Resources.
+- The compile rule: originals get archived in 4_Archive/YYYY-MM/
+  and are never edited. Notes are compiled from them and cite the
+  archived file they came from. If a note is wrong, fix the source
+  or fix this rulebook and regenerate it. Never hand-edit a note.
+- Project folders: 1_Projects/<area>-<project>/, the area being the
+  one the work is credited to, lowercase and hyphenated. The folder
+  name is not the project's name, only its address. Forward-only:
+  a project retires to 4_Archive/ under whatever name it had.
+- Code: a repository lives inside the project or area it belongs to,
+  at <folder>/_repos/<repo-name>/, each one its own git repository
+  registered as a submodule pointing at its real remote. Notes and
+  code are never committed as one act, and a submodule pointer moves
+  only when I bump it; an unattended run never does.
+- What a note carries: frontmatter with a stable id (YYYYMMDD-slug),
+  the archived source it was compiled from, when it was compiled, a
+  status, tags and a one-line summary; and one row per note in
+  5_System/INDEX.md, which is navigation, never synthesis.
+- A changelog at 5_System/CHANGELOG.md, newest first: a lab notebook
+  of decisions, blockers and failures, never a diary of work done.
+  An entry says what was decided or what failed, why, and the next
+  step. Routine work is recorded by the index and the archive.
+- Blocked artefacts: a run that cannot complete still writes the
+  file it owed, with status: blocked at the top and a section saying
+  exactly what failed, so that an absence is never the signal.
+- Four honesty labels, with definitions: verified (checked against
+  a source this session), unverified (source exists, nobody
+  checked), blocked (tried to check, failed, say so), inferred
+  (reasoned, not sourced).
+- Deterministic first: if a shell script can answer a question,
+  write the script and run it instead of guessing.
+- The gates: my answer to your question, verbatim.
+- Who you are: the name family, and the name I gave you; that you
+  are the single voice I talk to; that you route work rather than
+  doing all of it yourself once there is a team; and that you are
+  the one who stops at a gate and asks.
+- One rule that was not on the list because it is not a choice:
+  nothing under 4_Archive/ is ever edited or deleted, by you or by
+  me through you. Originals are the one thing that cannot be
+  regenerated, and every compiled note is only as trustworthy as the
+  original it cites. Write it as a refusal rather than a gate: do
+  not ask, do not do it.
+
+Keep it to a page or so. I'll grow it from here.
+
+When the file and the area folders are written, commit them with one
+line. A scheduled run that finds the tree already dirty leaves its
+own work uncommitted, so the first brief should not inherit this.

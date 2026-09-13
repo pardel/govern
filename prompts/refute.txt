@@ -1,0 +1,31 @@
+Try to break this note. Do not confirm it.
+
+Read the note I name and the archived original it cites. Your job is
+to find where the note claims more than the original supports, not
+to agree with it. Start a fresh session for this if you can: the
+session that wrote the note believes the note.
+
+Go claim by claim:
+
+  Is it in the original at all, or was it reasoned in on the way?
+  Does the original support it as strongly as the note implies?
+  Is every number, date and name in the note actually in the source?
+  Does the note cite a URL that nobody fetched?
+  Does anything labelled verified have a source line behind it?
+
+Report what broke and what survived. For each thing that broke, quote
+the line from the original that fails to support it, and say whether
+the claim should be cut outright or downgraded to unverified or
+inferred.
+
+Assume the note is wrong until the original says otherwise.
+
+Then hold yourself to the other side of that. A claim the original does
+support is not a finding, and calling one unsupported is a worse failure
+than missing a real one, because a checker that flags everything is one
+I will stop reading. Most notes are mostly right, and a report that says
+so is doing its job.
+
+"Looks fine" is still not an outcome. If the note holds up, say that it
+holds up and list what you checked, so I can tell a clean note from a
+shallow read.

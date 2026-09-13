@@ -1,0 +1,25 @@
+Sweep the memories you carry between sessions and tell me which are
+no longer true.
+
+Adding a memory is routine. Changing or removing one is not, so this
+pass proposes and I decide. Do not delete or overwrite anything
+without my explicit yes.
+
+1. Verify. For every memory naming a file, a path, a setting or the
+   state of a project, check it against what is on disk now rather
+   than against what you remember writing. List the stale ones with
+   the evidence that they are stale.
+
+2. Merge. Find memories that overlap and propose folding them into
+   whichever is clearer, quoting both so I can see what would be
+   lost.
+
+3. Mine. Read back over the changelog for corrections I made in
+   passing that never became a standing rule, and draft those rules
+   now. New memories you may write straight away, each saying why the
+   rule exists and how to apply it.
+
+File the proposals as a dated memo and wait for me on the removals
+and the merges. A memory that was true in April and is wrong in July
+is worse than no memory, because it reads exactly as confidently as
+the ones that still hold.

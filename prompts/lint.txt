@@ -1,0 +1,29 @@
+Run a lint pass over this knowledge base and tell me what is wrong.
+
+Answer these with grep and the filesystem rather than from memory,
+because every one of them is countable:
+
+  Links between notes pointing at an id that does not exist.
+  Notes whose cited source is not in the archive.
+  Notes compiled before the source they cite was last changed.
+  Archived originals that no note was ever compiled from.
+  Claims labelled verified with no source line behind them.
+  Notes carrying no source at all.
+  Index rows pointing at a note that is gone, and notes with no row.
+  Frontmatter a YAML parser cannot read. Check this one with a
+  parser rather than grep: grep still finds the fields in a broken
+  block, which is why the failure stays silent until something
+  parser-driven stops seeing the note.
+
+Then the half no script can do: notes that contradict each other,
+subjects that have grown big enough to deserve a note of their own,
+and links that ought to exist between notes and do not.
+
+Fix only what is mechanical and beyond argument, meaning stale paths
+and stale compile timestamps. Report everything else and leave it to
+me, because a lint pass that quietly rewrites my notes is worse than
+one that finds nothing.
+
+File the result as a dated memo, worst first. If the base is clean,
+say so, but list what you checked: a pass that finds nothing is a
+result only when I can see how hard it looked.

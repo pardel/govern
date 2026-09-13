@@ -1,0 +1,16 @@
+That was wrong. What I actually wanted was: <describe it>.
+
+Don't just fix it here. Add a rule to CLAUDE.md so it can't happen
+again, written so that a fresh session with no memory of this
+conversation would get it right first time. Show me the rule before
+you save it.
+
+Two checks before you show it. If the rule states how a tool
+behaves, run the command that proves it and show me that as well: a
+rule about a tool is a claim like any other, and a rulebook that
+asserts what nobody tested is how the next session inherits the
+mistake with more confidence than I had. And grep for every place
+the wrong fact was copied, in notes, index rows and summaries, and
+correct each of them in the same act. The copy least likely to be
+read in full is the one that reaches an index, and it is the one
+that gets quoted next.

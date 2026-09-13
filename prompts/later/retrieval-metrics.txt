@@ -1,0 +1,23 @@
+# For later. This assumes a fixed set of test queries you have
+# written down and kept stable, and enough notes for the answer to
+# mean anything. It is a month-six ritual rather than a week-one one.
+# If the query set is missing, say so rather than inventing queries,
+# which would measure nothing.
+
+Measure whether this knowledge base can still find things.
+
+Run every query in the test set and record two things for each:
+whether the note you expected came back, and how long it took.
+
+Then resolve every miss by hand, using the full retrieval route: the
+index first, then note bodies, then the links between them. A query
+that a plain search missed but the full route finds is a hit rather
+than a miss. Only something you cannot surface at all is a real miss.
+
+Never rewrite a failing query so that it passes. The query is the
+measurement, and adjusting it to fit the result is how a metric stops
+meaning anything.
+
+Record the miss rate and the slowest few in a dated file, and tell me
+whether the miss rate has moved since the last time. One month's
+number says little; the direction across three says everything.
