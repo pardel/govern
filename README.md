@@ -44,6 +44,8 @@ The reasoning behind each principle is at [pardel.dev/govern](https://www.pardel
 
 ## Project structure
 
+<img src="docs/how-it-works.png" alt="How a GOVERN base works: the rulebook over everything; items from the inbox archived untouched and compiled into notes that cite them, filed into Projects, Areas and Resources and indexed; a scheduled runner that writes the brief or logs a failure, with Bash withheld; a weekly review that decides every flag; and corrections and adjusted rules flowing back into the rulebook.">
+
 | | |
 |---|---|
 | [`setup.sh`](https://github.com/pardel/govern/blob/main/setup.sh) | the deterministic half: folders, git, one commit, eleven commands, three tools, one hook |
