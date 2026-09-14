@@ -86,6 +86,20 @@ kb_local="$TMP/local"; mkdir -p "$kb_local"
 ( cd "$kb_local" && PATH="$stubs:$PATH" bash "$ROOT/setup.sh" ) > "$TMP/local.out" 2>&1
 check "run from the clone, setup.sh installed no commands" "grep -q 'Commands installed' '$TMP/local.out'"
 check "run from the clone, setup.sh did not say the prompts came from the clone" "grep -q 'from the clone' '$TMP/local.out'"
+
+# A new base goes in an empty folder only. A `cd` that failed leaves the
+# terminal in the home folder, and a script that lays out a base there
+# anyway is how a home folder grows a 0_Inbox and eight user-wide commands.
+kb_full="$TMP/full"; mkdir -p "$kb_full"; echo mine > "$kb_full/notes.txt"
+( cd "$kb_full" && PATH="$stubs:$PATH" RAW="file://$ROOT/prompts" bash "$ROOT/setup.sh" ) > "$TMP/full.out" 2>&1
+rc_full=$?
+check "setup.sh ran in a folder that was not empty, exiting $rc_full" "[ $rc_full -ne 0 ]"
+check "setup.sh laid out folders in a folder that was not empty" "[ ! -d '$kb_full/0_Inbox' ]"
+check "setup.sh installed commands in a folder that was not empty" "[ ! -d '$kb_full/.claude' ]"
+kb_hidden="$TMP/hidden"; mkdir -p "$kb_hidden/.fseventsd"
+( cd "$kb_hidden" && PATH="$stubs:$PATH" RAW="file://$ROOT/prompts" bash "$ROOT/setup.sh" ) > "$TMP/hidden.out" 2>&1
+rc_hidden=$?
+check "setup.sh refused a folder holding only hidden entries, as a fresh volume does, exiting $rc_hidden" "[ $rc_hidden -eq 0 ]"
 check "the session hook was not written" "grep -q 'greet.sh' '$kb/.claude/settings.json' 2>/dev/null"
 ( cd "$kb" && bash 5_System/tools/greet.sh > "$TMP/greet.out" 2>"$TMP/greet.err" )
 rc_g=$?

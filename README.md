@@ -101,12 +101,13 @@ A scheduler, either `cron` or `launchd`, comes with your system. [Running it una
 
 ## Quick start
 
-Read the script before you run it: [setup.sh](https://github.com/pardel/govern/blob/main/setup.sh) is one hundred and ninety-five lines and reaches for nothing beyond `mkdir`, `touch`, `printf`, `curl` and `git`. Cloned rather than curled, it uses the prompts and tools beside it and fetches nothing. Where the knowledge base lives matters more than it looks, so it is worth a minute on [Portability and security](#portability-and-security) before you pick a folder. If you would rather see the choices laid out, [pardel.dev/govern/onboard](https://www.pardel.dev/govern/onboard/) walks the same steps in a browser and writes nothing itself.
+Read the script before you run it: [setup.sh](https://github.com/pardel/govern/blob/main/setup.sh) is two hundred and four lines and reaches for nothing beyond `mkdir`, `touch`, `printf`, `curl` and `git`. Cloned rather than curled, it uses the prompts and tools beside it and fetches nothing. Where the knowledge base lives matters more than it looks, so it is worth a minute on [Portability and security](#portability-and-security) before you pick a folder. If you would rather see the choices laid out, [pardel.dev/govern/onboard](https://www.pardel.dev/govern/onboard/) walks the same steps in a browser and writes nothing itself.
 
 ```bash
-cd /Volumes/kb          # or any empty folder
-curl -fsSL https://raw.githubusercontent.com/pardel/govern/main/setup.sh | bash
+cd /Volumes/kb && curl -fsSL https://raw.githubusercontent.com/pardel/govern/main/setup.sh | bash
 ```
+
+Any empty folder will do in place of `/Volumes/kb`. The two steps are chained with `&&` so that if the `cd` fails, the script never runs, and it refuses a folder that is not empty in any case, so a stray run cannot lay a base out in your home folder. Keep a comment off that line: zsh, the macOS default, does not treat `#` as one when you paste it.
 
 **Then the half no script can write for you.** Start Claude Code in that folder and run:
 

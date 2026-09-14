@@ -40,6 +40,15 @@ if [ "$update" = 1 ] && [ -n "$(git status --porcelain --ignore-submodules=all 2
   echo "update's diff is the update and nothing of yours." >&2
   exit 1
 fi
+# A new base goes in an empty folder and nowhere else. A `cd` that failed
+# leaves the terminal where it was, usually the home folder, and without
+# this the folders, the commands and git would all land there. Hidden
+# entries are allowed: a fresh volume carries .fseventsd at its root.
+if [ "$update" = 0 ] && { [ -n "$(ls 2>/dev/null)" ] || [ -e .git ]; }; then
+  echo "$(pwd) is not empty, so nothing was done. A new base goes in an" >&2
+  echo "empty folder: mkdir ~/kb && cd ~/kb, then run this again." >&2
+  exit 1
+fi
 
 if [ "$update" = 0 ]; then
   for d in 0_Inbox 1_Projects 2_Areas 3_Resources 4_Archive \
