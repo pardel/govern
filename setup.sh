@@ -42,9 +42,11 @@ if [ "$update" = 1 ] && [ -n "$(git status --porcelain --ignore-submodules=all 2
 fi
 # A new base goes in an empty folder and nowhere else. A `cd` that failed
 # leaves the terminal where it was, usually the home folder, and without
-# this the folders, the commands and git would all land there. Hidden
-# entries are allowed: a fresh volume carries .fseventsd at its root.
-if [ "$update" = 0 ] && { [ -n "$(ls 2>/dev/null)" ] || [ -e .git ]; }; then
+# this the folders, the commands and git would all land there. What a
+# freshly made volume carries at its root is allowed: hidden entries
+# such as .fseventsd, ext4's lost+found, and NTFS's own system folders.
+visible="$(ls 2>/dev/null | grep -vxE 'lost\+found|System Volume Information|\$RECYCLE\.BIN' || true)"
+if [ "$update" = 0 ] && { [ -n "$visible" ] || [ -e .git ]; }; then
   echo "$(pwd) is not empty, so nothing was done. A new base goes in an" >&2
   echo "empty folder: mkdir ~/kb && cd ~/kb, then run this again." >&2
   exit 1

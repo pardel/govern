@@ -36,8 +36,9 @@ would notice. The same rule the kit asks of your own changelog.
   folder` comment, which zsh does not treat as one when pasted, so the
   `cd` failed and the script laid out folders and installed eight
   commands into the home folder. `setup.sh` now refuses any folder
-  with visible entries or a `.git`, hidden entries being allowed
-  because a fresh volume has them, and the install line is chained
+  with visible entries or a `.git`, allowing only what a fresh volume
+  carries at its root (hidden entries, `lost+found`, NTFS system
+  folders), and the install line is chained
   with `&&` and carries no comment.
 - **Decided:** a mark, `logo.svg`: three compiled notes standing on one
   original, the slab in six colours for six principles and no letters.

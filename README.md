@@ -101,7 +101,7 @@ A scheduler, either `cron` or `launchd`, comes with your system. [Running it una
 
 ## Quick start
 
-Read the script before you run it: [setup.sh](https://github.com/pardel/govern/blob/main/setup.sh) is two hundred and four lines and reaches for nothing beyond `mkdir`, `touch`, `printf`, `curl` and `git`. Cloned rather than curled, it uses the prompts and tools beside it and fetches nothing. Where the knowledge base lives matters more than it looks, so it is worth a minute on [Portability and security](#portability-and-security) before you pick a folder. If you would rather see the choices laid out, [pardel.dev/govern/onboard](https://www.pardel.dev/govern/onboard/) walks the same steps in a browser and writes nothing itself.
+Read the script before you run it: [setup.sh](https://github.com/pardel/govern/blob/main/setup.sh) is two hundred and six lines and reaches for nothing beyond `mkdir`, `touch`, `printf`, `curl` and `git`. Cloned rather than curled, it uses the prompts and tools beside it and fetches nothing. Where the knowledge base lives matters more than it looks, so it is worth a minute on [Portability and security](#portability-and-security) before you pick a folder. If you would rather see the choices laid out, [pardel.dev/govern/onboard](https://www.pardel.dev/govern/onboard/) walks the same steps in a browser and writes nothing itself.
 
 ```bash
 cd /Volumes/kb && curl -fsSL https://raw.githubusercontent.com/pardel/govern/main/setup.sh | bash

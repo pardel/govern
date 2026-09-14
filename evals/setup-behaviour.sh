@@ -100,6 +100,10 @@ kb_hidden="$TMP/hidden"; mkdir -p "$kb_hidden/.fseventsd"
 ( cd "$kb_hidden" && PATH="$stubs:$PATH" RAW="file://$ROOT/prompts" bash "$ROOT/setup.sh" ) > "$TMP/hidden.out" 2>&1
 rc_hidden=$?
 check "setup.sh refused a folder holding only hidden entries, as a fresh volume does, exiting $rc_hidden" "[ $rc_hidden -eq 0 ]"
+kb_ext4="$TMP/ext4"; mkdir -p "$kb_ext4/lost+found"
+( cd "$kb_ext4" && PATH="$stubs:$PATH" RAW="file://$ROOT/prompts" bash "$ROOT/setup.sh" ) > "$TMP/ext4.out" 2>&1
+rc_ext4=$?
+check "setup.sh refused a fresh ext4 volume for its lost+found, exiting $rc_ext4" "[ $rc_ext4 -eq 0 ]"
 check "the session hook was not written" "grep -q 'greet.sh' '$kb/.claude/settings.json' 2>/dev/null"
 ( cd "$kb" && bash 5_System/tools/greet.sh > "$TMP/greet.out" 2>"$TMP/greet.err" )
 rc_g=$?
