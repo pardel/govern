@@ -27,7 +27,7 @@ says? Runs the real script twice in throwaway directories, once with the
 prompts reachable and once without, then drives the unattended runner
 through a quiet death and a good run with a stub in place of `claude`,
 and its `print` and `install` verbs against stub schedulers.
-A hundred and twenty-eight assertions. The second run matters more: a setup script that
+A hundred and thirty-three assertions. The second run matters more: a setup script that
 half-fails and says so is fine, and one that half-fails and reports
 success is the failure this whole framework exists to prevent.
 

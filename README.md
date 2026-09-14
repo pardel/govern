@@ -263,7 +263,7 @@ bash evals/run.sh              # deterministic, free, seconds
 bash evals/run.sh --prompts    # adds the prompt evals, which need a model
 ```
 
-The free tiers check that the repo describes itself accurately, and that `setup.sh` does what this README claims: a hundred and twenty-eight assertions across a run where the prompts are reachable and one where they are not, including the unattended runner's failure path, driven by a stub rather than a model. The second matters more, because a setup script that half-fails and says so is fine, while one that half-fails and reports success is the failure the whole framework exists to prevent. It shipped that way for about ten minutes and only running it caught that.
+The free tiers check that the repo describes itself accurately, and that `setup.sh` does what this README claims: a hundred and thirty-three assertions across a run where the prompts are reachable and one where they are not, including the unattended runner's failure path, driven by a stub rather than a model. The second matters more, because a setup script that half-fails and says so is fine, while one that half-fails and reports success is the failure the whole framework exists to prevent. It shipped that way for about ten minutes and only running it caught that.
 
 The prompt evals plant known strings in a fixture and grep for them, rather than asking a model whether a model did well. `refute-catches-invention` gives a note three claims its source states verbatim and one it never made: a pass names the invented claim and leaves the other three alone, so the case can fail in both directions. A checker that flags everything has perfect recall and no worth.
 
