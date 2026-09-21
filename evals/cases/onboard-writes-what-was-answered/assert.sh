@@ -2,13 +2,13 @@
 # $KB is the throwaway knowledge base, $OUT the model's output,
 # $FINDINGS the file to append failures to. Silence means passed.
 
-rb="$KB/CLAUDE.md"
+rb="$KB/AGENTS.md"
 if [ ! -s "$rb" ]; then
-  echo "no CLAUDE.md was written" >> "$FINDINGS"
+  echo "no AGENTS.md was written" >> "$FINDINGS"
   exit 0
 fi
-n=$(find "$KB" -name 'CLAUDE.md' | wc -l | tr -d ' ')
-[ "$n" = "1" ] || echo "expected exactly 1 CLAUDE.md, found $n" >> "$FINDINGS"
+n=$(find "$KB" -name 'AGENTS.md' | wc -l | tr -d ' ')
+[ "$n" = "1" ] || echo "expected exactly 1 AGENTS.md, found $n" >> "$FINDINGS"
 
 # The name and the family, as answered.
 grep -q 'Buzz' "$rb"      || echo "the rulebook does not carry the name Buzz" >> "$FINDINGS"

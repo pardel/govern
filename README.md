@@ -39,7 +39,7 @@ The reasoning behind each principle is at [pardel.dev/govern](https://www.pardel
 7. [Running it unattended](#running-it-unattended)
 8. [Seeing what you have](#seeing-what-you-have)
 9. [Evals](#evals)
-10. [Why there is no CLAUDE.md in this repo](#why-there-is-no-claudemd-in-this-repo)
+10. [Why there is no AGENTS.md in this repo](#why-there-is-no-agentsmd-in-this-repo)
 11. [Licence](#licence)
 
 ## Project structure
@@ -84,7 +84,7 @@ claude --version  # Claude Code
 
 If `git` is missing, [git-scm.com/install](https://git-scm.com/install/) covers macOS, Linux and Windows. `curl` is needed too, by the setup and later by the page watcher, and it comes with macOS and most Linux systems.
 
-[Claude Code](https://www.claude.com/product/claude-code) is what this was built and tested against, and what the prompts are written for, so it is the one to reach for first. Any assistant that loads a rulebook at the start of a session and can write files will run them too. The prompts name `CLAUDE.md`, so substitute whichever file yours reads.
+[Claude Code](https://www.claude.com/product/claude-code) is what this was built and tested against, and what the prompts are written for, so it is the one to reach for first. Any assistant that loads a rulebook at the start of a session and can write files will run them too. The prompts name `AGENTS.md`, so substitute whichever file yours reads.
 
 There is no database, no server, no application and no format that belongs to anyone. Everything is folders and text files.
 
@@ -223,7 +223,7 @@ The disk-image recipes for macOS, Linux and Windows, and how private each one is
 
 `/daily-brief` says the brief is written before you wake, which only happens if something runs it while you are asleep. Setup copies in the runner for that and never calls it. `5_System/tools/schedule.sh` executes one command, once, whenever something asks it to.
 
-**Later, not on day one.** An unattended session in a knowledge base whose gates list has not been written yet is this framework inside out, so the runner refuses to start until a `CLAUDE.md` exists and says why. Give it a rulebook, a few weeks of running the commands by hand, and enough in the base to brief you on. Then schedule the one command whose whole point is that it happens without you.
+**Later, not on day one.** An unattended session in a knowledge base whose gates list has not been written yet is this framework inside out, so the runner refuses to start until a `AGENTS.md` exists and says why. Give it a rulebook, a few weeks of running the commands by hand, and enough in the base to brief you on. Then schedule the one command whose whole point is that it happens without you.
 
 Run it by hand first, and read what it wrote:
 
@@ -246,7 +246,7 @@ Setup installs one more thing: a script that reads the knowledge base and writes
 bash 5_System/tools/status.sh > kb-status.html && open kb-status.html
 ```
 
-Your gates list read back out of your own `CLAUDE.md`, which commands are installed, how many notes and originals exist, what is sitting in the inbox, and how long since anything happened. It doubles as a place to see how far through setup you are.
+Your gates list read back out of your own `AGENTS.md`, which commands are installed, how many notes and originals exist, what is sitting in the inbox, and how long since anything happened. It doubles as a place to see how far through setup you are.
 
 It is a script that writes a file, not an application. Nothing runs in the background, nothing watches anything, and the page does not update itself: re-run it when you want a fresh one. Every number on it was counted off the disk rather than estimated, which is the Evidence principle applied to the thing doing the displaying.
 
@@ -271,7 +271,7 @@ More in [evals/README.md](https://github.com/pardel/govern/blob/main/evals/READM
 
 <p align="right"><sub><a href="#contents">Go to top</a></sub></p>
 
-## Why there is no CLAUDE.md in this repo
+## Why there is no AGENTS.md in this repo
 
 A ready-made rulebook would be the one thing this framework argues against. The gates list is a statement about what you are unwilling to have happen without being asked, and nobody else can write that for you. Ship it written and the first thing a new user does is accept a stranger's judgement about their own irreversible actions, which is the failure the Gates principle exists to prevent.
 

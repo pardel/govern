@@ -63,14 +63,14 @@ TIMEOUT="${GOVERN_TIMEOUT:-900}"
 
 die() { echo "$*" >&2; exit 1; }
 
-# CLAUDE.md rather than a folder, because folders can be created by
+# AGENTS.md rather than a folder, because folders can be created by
 # accident. On macOS `/Volumes` is writable, so a path inside an
 # unmounted image is a directory waiting to be made, and the real volume
 # then arrives at `/Volumes/kb 1` while every absolute path still points
 # at the empty one. Checking for a file that only the real base has is
 # what stops this script writing into that hole.
-[ -n "$ROOT" ] && [ -f "$ROOT/CLAUDE.md" ] || die \
-"No rulebook at $ROOT/CLAUDE.md, so nothing will run.
+[ -n "$ROOT" ] && [ -f "$ROOT/AGENTS.md" ] || die \
+"No rulebook at $ROOT/AGENTS.md, so nothing will run.
 
 Either the volume holding the knowledge base is not mounted, or you have
 not run /onboard yet. Scheduling an unattended session before you have

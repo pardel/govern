@@ -1,7 +1,7 @@
-Write CLAUDE.md at the root of this folder: the rulebook for a
+Write AGENTS.md at the root of this folder: the rulebook for a
 personal knowledge base built on the GOVERN principles.
 
-First check whether CLAUDE.md already exists. If it does, stop and
+First check whether AGENTS.md already exists. If it does, stop and
 tell me what is in it, including my current gates list, then ask
 whether I want it replaced. Overwriting a grown rulebook loses every
 correction that went into it, so do not do it without my explicit

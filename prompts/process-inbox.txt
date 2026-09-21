@@ -1,7 +1,7 @@
 Process everything in 0_Inbox/.
 
 For each item: read it, move the original unchanged into
-4_Archive/YYYY-MM/, classify it per CLAUDE.md, and write a compiled
+4_Archive/YYYY-MM/, classify it per AGENTS.md, and write a compiled
 note at the destination. Its frontmatter carries a stable id
 (YYYYMMDD-slug, never changed once written), the archived source
 path, when it was compiled, a status, tags and a one-line summary.

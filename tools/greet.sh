@@ -30,7 +30,7 @@ lint=$(newest 5_System/memos/lint-*.md)
 urgent=""
 
 say "Knowledge base at $ROOT, $(date +%Y-%m-%d)."
-if [ ! -f CLAUDE.md ]; then
+if [ ! -f AGENTS.md ]; then
   say "No rulebook yet. Run /onboard before anything else."
   urgent="No rulebook yet. Say anything and I will offer to run /onboard."
 fi
@@ -61,7 +61,7 @@ if [ "${1:-}" = "--hook" ]; then
   esc() { printf '%s' "$1" | sed -e 's/\\/\\\\/g' -e 's/"/\\"/g'; }
   ctx=""
   for l in "${lines[@]}"; do ctx="$ctx$(esc "$l")\\n"; done
-  [ -f CLAUDE.md ] || ctx="${ctx}\\nThere is no rulebook, so nothing else can be done properly yet. Whatever the first message says, reply with one question only: this base has no rulebook, run the onboarding now? On a yes, read .claude/skills/onboard/SKILL.md and carry out that interview exactly as written, then come back to whatever was asked. On a no, say that /onboard writes it whenever they are ready, and stop."
+  [ -f AGENTS.md ] || ctx="${ctx}\\nThere is no rulebook, so nothing else can be done properly yet. Whatever the first message says, reply with one question only: this base has no rulebook, run the onboarding now? On a yes, read .claude/skills/onboard/SKILL.md and carry out that interview exactly as written, then come back to whatever was asked. On a no, say that /onboard writes it whenever they are ready, and stop."
   printf '{"additionalContext": "%s"' "$ctx"
   [ -n "$urgent" ] && printf ', "systemMessage": "%s"' "$(esc "$urgent")"
   printf '}\n'

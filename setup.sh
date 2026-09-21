@@ -104,7 +104,7 @@ install_command() {
 }
 
 install_command onboard onboard.txt \
-  "Onboard this knowledge base: ask what to call me, the gates, your areas, a line on each and whether to schedule the brief, then write CLAUDE.md. Run this once, first."
+  "Onboard this knowledge base: ask what to call me, the gates, your areas, a line on each and whether to schedule the brief, then write AGENTS.md. Run this once, first."
 install_command process-inbox process-inbox.txt \
   "Process everything in 0_Inbox: archive each original untouched, classify it, compile a note that cites its source, and verify before reporting done."
 install_command daily-brief daily-brief.txt \
@@ -112,7 +112,7 @@ install_command daily-brief daily-brief.txt \
 install_command recruit recruit.txt \
   "Onboard a worker: interview me for the role, the name and above all what it must never do, then file a profile and a roster row. With no roster yet, agree a name family and hire the orchestrator and the recruiter first."
 install_command correction-to-rule correction-to-rule.txt \
-  "Turn a correction into a rule in CLAUDE.md, written so a fresh session would get it right first time."
+  "Turn a correction into a rule in AGENTS.md, written so a fresh session would get it right first time."
 install_command refute refute.txt \
   "Adversarially check a note against the archived original it cites: try to break each claim rather than confirm it, and say what should be cut or downgraded."
 install_command lint lint.txt \

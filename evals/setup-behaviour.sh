@@ -141,7 +141,7 @@ check "schedule.sh was not installed" "[ -s '$kb/5_System/tools/schedule.sh' ]"
 
 sched="$kb/5_System/tools/schedule.sh"
 
-# Setup deliberately writes no CLAUDE.md, and an unattended session in a
+# Setup deliberately writes no AGENTS.md, and an unattended session in a
 # base with no gates list is this framework inside out. The same check
 # catches an unmounted volume, so it has to hold before anything else.
 ( cd "$kb" && bash "$sched" run daily-brief ) > "$TMP/norule.out" 2>&1
@@ -150,7 +150,7 @@ check "schedule.sh ran with no rulebook present, exiting $rc_nr" "[ $rc_nr -ne 0
 check "schedule.sh refused without saying a rulebook was what was missing" \
   "grep -qi 'rulebook' '$TMP/norule.out'"
 
-printf '# Rulebook\n\n## Gates\n\n- Pushing to a git remote.\n' > "$kb/CLAUDE.md"
+printf '# Rulebook\n\n## Gates\n\n- Pushing to a git remote.\n' > "$kb/AGENTS.md"
 ( cd "$kb" && git add -A && git commit -q -m "rulebook" )
 
 ( cd "$kb" && bash "$sched" run no-such-command ) > "$TMP/nocmd.out" 2>&1
@@ -263,9 +263,9 @@ check "5_System/logs/ is not ignored, so run logs would be committed" \
 # and refuses both a plain re-run and a dirty tree.
 ( cd "$kb" && git add -A -- ':!*/_repos/*' && git commit -q -m "before update" ) >/dev/null 2>&1 || true
 commits_before="$(cd "$kb" && git rev-list --count HEAD)"
-rb_before="$(cd "$kb" && cat CLAUDE.md)"
+rb_before="$(cd "$kb" && cat AGENTS.md)"
 mkdir -p "$kb/.claude/skills/rulebook"
-printf -- '---\nname: rulebook\ndescription: Interview me for the gates list, then write CLAUDE.md.\n---\nold\n' > "$kb/.claude/skills/rulebook/SKILL.md"
+printf -- '---\nname: rulebook\ndescription: Interview me for the gates list, then write AGENTS.md.\n---\nold\n' > "$kb/.claude/skills/rulebook/SKILL.md"
 ( cd "$kb" && git add -A -- ':!*/_repos/*' && git commit -q -m "stale rulebook" ) >/dev/null 2>&1
 ( cd "$kb" && PATH="$stubs:$PATH" RAW="file://$ROOT/prompts" bash "$ROOT/setup.sh" ) > "$TMP/rerun.out" 2>&1
 rc_rr=$?
@@ -280,7 +280,7 @@ rm -f "$kb/0_Inbox/dirty.txt"
 rc_up=$?
 check "--update failed, exiting $rc_up" "[ $rc_up -eq 0 ]"
 check "--update made a commit" "[ \"$(cd "$kb" && git rev-list --count HEAD)\" = '$((commits_before + 1))' ]"
-check "--update touched the rulebook" "[ \"$(cd "$kb" && cat CLAUDE.md)\" = \"$rb_before\" ]"
+check "--update touched the rulebook" "[ \"$(cd "$kb" && cat AGENTS.md)\" = \"$rb_before\" ]"
 check "--update left the stale /rulebook in place" "[ ! -d '$kb/.claude/skills/rulebook' ]"
 check "--update did not reinstall /onboard" "grep -q 'name: onboard' '$kb/.claude/skills/onboard/SKILL.md'"
 check "--update reached for a scheduler" "[ ! -f '$TMP/scheduler-touched' ] || ! grep -q 'setup' '$TMP/scheduler-touched'"

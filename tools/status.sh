@@ -45,7 +45,7 @@ newest() {  # newest <dir> <pattern> -> path of most recently modified
 }
 
 # ------------------------------------------------------------------ data
-has_rulebook=no; [ -f CLAUDE.md ] && has_rulebook=yes
+has_rulebook=no; [ -f AGENTS.md ] && has_rulebook=yes
 n_notes=$(find 1_Projects 2_Areas 3_Resources \( "${PRUNE[@]}" \) -prune -o \
             -name '*.md' -type f -print 2>/dev/null \
           | xargs grep -l '^id: ' 2>/dev/null | wc -l | tr -d ' ')
@@ -122,9 +122,9 @@ echo '<h2>Your gates</h2>'
 if [ "$has_rulebook" = yes ]; then
   # Any heading naming gates, not only one titled exactly "Gates": a grown
   # rulebook is as likely to call it "Confirmation-gated actions".
-  gates=$(awk '/^#+ .*[Gg]ate/{f=1;next} /^#+ /{f=0} f && /^[-*] /' CLAUDE.md)
+  gates=$(awk '/^#+ .*[Gg]ate/{f=1;next} /^#+ /{f=0} f && /^[-*] /' AGENTS.md)
   if [ -n "$gates" ]; then
-    echo '<p class="sub">Nothing here happens without you saying yes. Read from your <code>CLAUDE.md</code>.</p><ul>'
+    echo '<p class="sub">Nothing here happens without you saying yes. Read from your <code>AGENTS.md</code>.</p><ul>'
     # A bullet in a grown rulebook is usually "**The gate.** Then the
     # reasoning", and only the bolded lead belongs on a status page. Take it
     # when it is there, and keep the whole line when it is not. Without this
@@ -134,7 +134,7 @@ if [ "$has_rulebook" = yes ]; then
       | sed 's|`\([^`]*\)`|<code>\1</code>|g' | sed 's|.*|<li>&</li>|'
     echo '</ul>'
   else
-    echo '<p class="empty">A CLAUDE.md exists but no gates list was found under a "Gates" heading.</p>'
+    echo '<p class="empty">A AGENTS.md exists but no gates list was found under a "Gates" heading.</p>'
   fi
 else
   echo '<p class="empty">No rulebook yet. Run <code>/onboard</code>: it asks what to call the assistant, which actions must never happen without your explicit yes, what you are responsible for and what good looks like there, and whether to schedule the brief; your gates answer becomes this list.</p>'

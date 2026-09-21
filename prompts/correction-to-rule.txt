@@ -1,6 +1,6 @@
 That was wrong. What I actually wanted was: <describe it>.
 
-Don't just fix it here. Add a rule to CLAUDE.md so it can't happen
+Don't just fix it here. Add a rule to AGENTS.md so it can't happen
 again, written so that a fresh session with no memory of this
 conversation would get it right first time. Show me the rule before
 you save it.

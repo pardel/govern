@@ -8,8 +8,8 @@ straight to question 1.
 
 Bootstrap:
 
-  The name family was chosen at /onboard and is in CLAUDE.md, so
-  use it. Only if CLAUDE.md names none, agree one first: research
+  The name family was chosen at /onboard and is in AGENTS.md, so
+  use it. Only if AGENTS.md names none, agree one first: research
   it and offer three or four options, each with example names and
   one line on why it suits.
   Judge a family on whether it supplies personalities rather than
@@ -23,8 +23,8 @@ Bootstrap:
   confuse the metaphor.
 
   The orchestrator already exists: it is the name the rulebook gave
-  the single voice I talk to, in CLAUDE.md, and that block is its
-  charter. Reserve the name; do not hire it again. If CLAUDE.md
+  the single voice I talk to, in AGENTS.md, and that block is its
+  charter. Reserve the name; do not hire it again. If AGENTS.md
   names nobody, hire it first, and its charter is a file of its own
   rather than a roster profile: it routes work, never does it.
 
